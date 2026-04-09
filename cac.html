@@ -1,0 +1,277 @@
+
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LTOOL — Get Key</title>
+<style>
+/* ===== MÀU TÍM + VÀNG ===== */
+:root{
+  --bg:#1a0033;
+  --panel:#2a0a4a;
+  --accent:#ffdd00;
+  --muted:#bb99ff;
+  --error:#ff99aa;
+  --key-bg:#1a0a4a;
+  --key-text:#ffddff;
+}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:Inter, ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  background:radial-gradient(circle at 10% 10%, #2a0a4a, #1a0033);
+  color:#e0f0ff;
+}
+.wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.card{
+  width:760px;
+  max-width:92vw;
+  background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+  border-radius:14px;
+  padding:28px;
+  border:1px solid rgba(255,221,0,0.15);
+  box-shadow:0 12px 50px rgba(0,0,0,0.7);
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:center;
+}
+/* ===== LOGO ===== */
+.logo{
+  width:140px;
+  height:140px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:18px;
+  background:linear-gradient(135deg,#2a0a4a,#1a0033);
+  box-shadow:0 8px 40px rgba(255,221,0,0.1), inset 0 -8px 22px rgba(0,0,0,0.6);
+  overflow:hidden;
+  font-size:56px;
+  font-weight:800;
+  color:var(--accent);
+  text-shadow:0 0 12px rgba(255,221,0,0.5);
+}
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:drop-shadow(0 6px 20px rgba(255,221,0,0.15));
+}
+.body{
+  flex:1;
+}
+/* ===== TIÊU ĐỀ ===== */
+.title{
+  font-size:18px;
+  margin:0 0 6px;
+  letter-spacing:1px;
+  font-weight:bold;
+  color:var(--accent);
+  animation:neon 3s infinite ease-in-out;
+}
+.subtitle{
+  color:var(--muted);
+  font-size:13px;
+  margin:0 0 16px;
+}
+/* ===== Ô KEY HIỂN THỊ ===== */
+.key-box{
+  background:var(--key-bg);
+  padding:24px;                    
+  border-radius:10px;
+  border:1px solid rgba(255,221,0,0.3);
+  font-family:monospace;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin:20px auto;
+  max-width:500px;
+}
+.key-text{
+  flex:1;
+  color:var(--key-text);
+  font-size:18px;
+  line-height:1.5;
+  /* Trên desktop: thu gọn 1 dòng vô */
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-break:keep-all;
+}
+/* ===== NÚT COPY (nhỏ lại trên desktop) ===== */
+.btn{
+  background:linear-gradient(90deg,#ff9900,#ff6600);
+  border:none;
+  padding:8px 14px;                
+  border-radius:6px;
+  color:#021016;
+  font-weight:700;
+  cursor:pointer;
+  margin-left:8px;
+  transition:0.3s;
+  flex-shrink:0;
+  align-self:flex-start;
+  font-size:14px;                  
+}
+.btn:hover{
+  box-shadow:0 0 15px #ff9900;
+}
+/* ===== DÒNG CUỐI ===== */
+.small{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:10px;
+}
+.small code{
+  background:var(--key-bg);
+  color:var(--accent);
+  padding:2px 6px;
+  border-radius:4px;
+}
+@keyframes neon{
+  0%,100%{text-shadow:0 0 6px rgba(255,153,0,0.6);}
+  50%{text-shadow:0 0 18px rgba(255,153,0,0.95);}
+}
+/* ===== RESPONSIVE CHO ĐIỆN THOẠI ===== */
+@media (max-width:680px){
+  .card{
+    flex-direction:column;
+    align-items:stretch;
+    text-align:center;
+  }
+  .logo{
+    width:100px;
+    height:100px;
+    font-size:40px;
+    margin:0 auto;
+  }
+  .key-box{
+    flex-direction:column;
+    align-items:stretch;
+    gap:15px;
+    padding:24px;                  
+  }
+  .key-text{
+    white-space:normal;
+    overflow:visible;
+    text-overflow:clip;
+    font-size:20px;
+    line-height:1.6;
+    word-break:break-word;
+  }
+  .btn{
+    width:100%;
+    margin-left:0;
+    padding:14px 18px;             
+    font-size:18px;
+  }
+  .subtitle{
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+<div class="card">
+<div class="logo">
+<img src="IMG_1770991960734_1770992011702.jpg"
+     alt="LTOOL logo"
+     onerror="this.style.display='none'; this.parentNode.innerText='L'">
+</div>
+
+<div class="body">
+<h2 class="title">LTOOL VERIFY</h2>
+<p class="subtitle">HỆ THỐNG XÁC THỰC & LẤY KEY TỰ ĐỘNG</p>
+
+<div class="key-box">
+<div class="key-text" id="keyText">Đang kiểm tra...</div>
+<div>
+<button class="btn" id="copyBtn">COPY KEY</button>
+</div>
+</div>
+
+<div class="small">LTOOL CHÍNH HÃNG &copy; 2026</div>
+</div>
+</div>
+</div>
+
+<script>
+async function getIP() {
+  try {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    return data.ip;
+  } catch (error) {
+    console.error('Error fetching IP:', error);
+    return '127.0.0.1';
+  }
+}
+
+function arrayBufferToHex(buffer) {
+  return Array.from(new Uint8Array(buffer))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+async function generateKey() {
+  const ip = await getIP();
+  const today = new Date().toISOString().split('T')[0];
+  const data = ip + today;
+  const hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(data));
+  const hashHex = arrayBufferToHex(hashBuffer).slice(0, 16);
+  return 'FREE-' + hashHex;
+}
+
+window.onload = async function() {
+  const display = document.getElementById('keyText');
+  try {
+    const key = await generateKey();
+    display.innerText = key;
+    display.style.color = "var(--key-text)";
+  } catch (error) {
+    console.error('Error generating key:', error);
+    display.innerText = "Lỗi: Không thể tạo Key!";
+    display.style.color = "var(--error)";
+  }
+};
+
+const copyBtn = document.getElementById('copyBtn');
+const keyTextEl = document.getElementById('keyText');
+
+copyBtn.addEventListener('click', () => {
+  const textToCopy = keyTextEl.innerText;
+
+  if (textToCopy.includes("Lỗi") || textToCopy.includes("Đang kiểm tra")) {
+    alert("Không có key hợp lệ để copy!");
+    return;
+  }
+
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    const originalText = copyBtn.innerText;
+    copyBtn.innerText = "ĐÃ COPY!";
+    copyBtn.style.background = "#fff";
+
+    setTimeout(() => {
+      copyBtn.innerText = originalText;
+      copyBtn.style.background = "linear-gradient(90deg,#ffdd00,#ffaa00)";
+    }, 1500);
+  }).catch(err => {
+    alert("Lỗi copy: " + err);
+  });
+});
+</script>
+</body>
+
+</html>
